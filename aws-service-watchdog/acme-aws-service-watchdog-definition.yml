@@ -1,0 +1,19 @@
+# Copy this file (and the built 'bin' folder) into the following folder:
+#    Linux: /var/db/newrelic-infra/custom-integrations
+#    Windows: C:\Program Files\New Relic\newrelic-infra\custom-integrations
+#
+# For a complete description of the Definition File Specification, please
+# refer to the Integrations SDK documentation:
+# https://docs.newrelic.com/docs/integrations/integrations-sdk/file-specifications
+
+name: com.acme.aws-service-watchdog
+description: Reports status and metrics for aws-service-watchdog service
+protocol_version: 1
+os: linux
+
+commands:
+  watchdog:
+    command:
+    - ./bin/acme-aws-service-watchdog
+    - --events
+    interval: 60

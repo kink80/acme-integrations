@@ -1,0 +1,18 @@
+# Copy this file into the following folder:
+#    Linux: /etc/newrelic-infra/integrations.d
+#    Windows: C:\Program Files\New Relic\newrelic-infra\integrations.d
+#
+# For a complete description of the Configuration File Specification, please
+# refer to the Integrations SDK documentation:
+# https://docs.newrelic.com/docs/integrations/integrations-sdk/file-specifications
+
+integration_name: com.acme.aws-service-watchdog
+
+instances:
+  - name: aws-service-watchdog
+    command: watchdog
+    arguments:
+      region: "us-east-1"
+      timeout: 2
+      tagname: "tag:Service"
+      services: "{\"services\":[{\"name\":\"servicename\",\"tag\":\"tagvalue\",\"port\":\"12345\"}]}"
